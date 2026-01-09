@@ -1,0 +1,215 @@
+/*
+   ==============================
+    Palette Colori + misure base
+   ==============================
+*/
+
+:root{
+  --sfondo: #f3f7f4;
+  --card: #ffffff;
+  --card-soft: #eaf2ec;
+
+  --testo: #0f1a12;
+  --testo-soft: #3f5a48;
+
+  --bordo: rgba(15, 26, 18, 0.14);
+  --ombra: 0 10px 25px rgba(15, 26, 18, 0.10);
+
+  --raggio: 16px;
+  --max-contenuto: 980px;
+}
+
+/* Reset minimale
+Inizio col rendere lo stile della pagina più uniforme tra i possibili browser.
+Con 'box-sizing: border-box' ==> le dimensioni degli elementi restano invariati (padding e bordo sono inclusi nella larghezza/altezza),
+mentre 'margin: 0' e 'padding: 0' su 'html' e 'body' eliminano rispettivamente i marigini esterni e spazi interni*/
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+
+/* Base pagina 
+In questa parte viene impostato lo stile di base per tutta la pagina.
+In font-family è presente un elenco di font per i vari possibili dispositivi: Windows, iOS, Android, Arial e il generico sans-serif
+La distanza tra una riga e l'altra è di 1,55 altezza carattere
+sfondo e testo li ho definiti in root  */
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.55;
+  background: var(--sfondo);
+  color: var(--testo);
+}
+
+
+/* Tutti i link <a> ereditano il colore del "padre" */ 
+a{ color: inherit; }
+
+
+/* Contenitore centrale
+qui definisco la larghezza del contenitore centrandolo allo schermo e mantenendo un margine laterale
+in width viene presa la larghezza dello schermo meno 16px a sinistra e a destra fino ad un massimo di 980 pixel*/
+.page-container{
+  width: min(100% - 32px, var(--max-contenuto));
+  margin: 0 auto;
+}
+
+
+
+/* ==============================
+              Header
+   ==============================   
+*/
+
+
+/*
+   Qui definisco colori, sfondo, posizione e "fisso" l'intestazione in alto
+ */
+
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(220, 235, 224, 0.62);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--bordo);
+}
+
+/*
+   Uso Flexbox per mettere gli elementi dell'header sulla stessa riga:
+   il blocco "brand" resta a sinistra e il pulsante "Scarica il report" va a destra,
+   entrambi centrati in verticale, con 14px di spazio tra loro e 14px di padding sopra/sotto.
+*/
+.header-inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+}
+
+/* Brand (logo + titolo vengono affiancati) */
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* il logo viene impostato a 42px e gli angoli arrotondati */
+.brand-logo{
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--bordo);
+  background: var(--card);
+  object-fit: cover;
+}
+
+.brand-title{
+  margin: 0;
+  font-size: 1.50rem;
+}
+
+
+/* ==============================
+            Contenuto
+   ==============================
+*/
+.main-content{
+  padding: 28px 0 44px;
+}
+
+/* Card base: blocchi con sfondo, bordo e ombra  */
+.card{
+  background: var(--card);
+  border: 1px solid var(--bordo);
+  border-radius: var(--raggio);
+  box-shadow: var(--ombra);
+  padding: 18px;
+  margin-top: 16px;
+}
+
+/* Testi vari */
+h2{ margin: 0 0 10px; font-size: 1.15rem; }
+p{ margin: 0 0 10px; }
+.muted{ color: var(--testo-soft); }
+
+/* Liste */
+.list{
+  margin: 0;
+  padding-left: 18px;
+}
+.list li{ margin: 8px 0; }
+
+
+/* ==============================
+           Area download
+   ============================== 
+*/
+/* Layout download: testo a sinistra, azioni a destra */
+.download{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Permette di andare a capo su schermi piccoli */
+.download-actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* Pulsante (link) con la proprietà text-decoration elimino la sottolineatura */
+.button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--bordo);
+  text-decoration: none;
+  font-weight: 600;
+  background: var(--card);
+}
+
+/* Pulsante principale download */
+.button.primary{
+  background: #1f6f43;
+  color: #ffffff;
+  border-color: rgba(31, 111, 67, 0.35);
+}
+
+.button.ghost{
+  background: transparent;
+}
+
+/* Effetto sollevamento */
+.button:hover{ transform: translateY(-1px); }
+
+
+
+/* ==============================
+              Footer
+   ==============================
+*/
+.site-footer{
+  background: rgba(220, 235, 224, 0.92);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--bordo);
+  padding: 18px 0;
+}
+
+.site-footer p{ margin: 6px 0; }
+
+/* ==============================
+              Mobile
+   ==============================
+*/
+
+/* Sotto 700px imposto il layout in colonna per non "stringere" troppo gli elementi */
+@media (max-width: 700px){
+  .header-inner{ flex-direction: column; align-items: flex-start; }
+  .download{ flex-direction: column; align-items: stretch; }
+  .download-actions{ justify-content: flex-start; }
+}

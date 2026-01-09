@@ -1,0 +1,207 @@
+<!--
+Obiettivo della pagina: introdurre in modo sintetico il tema della sostenibilità e rendere immediato l'accesso al PDF del Bilancio 2024.
+Responsive: meta viewport e regole CSS (layout fluido e media query) per mantenere leggibilità su desktop e mobile.
+Accessibilità: uso di tag semantici (header/main/section/footer) e attributo alt per le immagini, in linea con le buone pratiche W3C/WCAG.
+-->
+
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <!-- viewport: Questa riga è fondamentale per il responsive su Smartphone, Tablet, ecc...  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!--
+    TITOLO PAGINA
+    Compare nella scheda del browser e nei preferiti.
+  -->
+  <title>Azienda Agricola San Salvatore 1988 — Sostenibilità (Bilancio 2024)</title>
+
+  <!--
+    DESCRIPTION
+    Breve descrizione utilizzata anche dai motori di ricerca per la SEO e nelle anteprime.  -->
+  <meta
+    name="description"
+    content="Sintesi delle iniziative di sostenibilità di San Salvatore 1988 e download del Bilancio di Sostenibilità 2024."
+  />
+
+  <!--
+    Inclusione del file CSS "styles.css"  -->
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+  <!-- ==============================
+                   HEADER   
+       ==============================
+       Contiene:
+       - Brand (logo e nome dell'azienda)
+       - Pulsante che riporta alla sezione Donwload Report (ancora #download)
+  -->
+  <header class="site-header">
+    <div class="page-container header-inner">
+      <!-- BRAND - logo dell'azienda San Salvatore 1988.  -->
+       <div class="brand">
+          <img class="brand-logo" src="images/logo.jpg" alt="Logo San Salvatore 1988" />
+        <!-- Titolo + sottotitolo del sito.  -->
+          <div>
+            <h1 class="brand-title">Report sostenibilità Azienda Agricola San Salvatore 1988</h1>
+          </div>
+       </div>
+      <!--
+        LINK RAPIDO AL DOWNLOAD
+        href="#download" punta direttamente all'elemento che ha id="download" -->
+       <a class="button primary" href="#download">Scarica il report</a>
+    </div>
+  </header>
+
+  <!-- ==============================
+                   MAIN   
+       ==============================
+        Contiene:
+        - le 4 sezioni informative della pagina
+  -->
+  <main class="main-content">
+    <div class="page-container">
+
+      <!--
+        SEZIONE: INTRODUZIONE "In breve"
+        Spiega lo scopo della pagina in modo breve.
+      -->
+      <section class="card">
+        <h2>In breve</h2>
+        <p class="muted">
+          Pagina informativa che riassume alcune azioni di sostenibilità e mette a disposizione il PDF del
+          <strong>Bilancio di Sostenibilità 2024:</strong>
+           iniziative ambientali (energia da fotovoltaico e biodigestore, recupero degli scarti di lavorazione),
+           attenzione alle persone e alla sicurezza, e impegno sul territorio tramite progetti sociali.
+          <br>Tramite il link dedicato è possibile scaricare il PDF del documento completo.
+        </p>
+      </section>
+
+      <!--
+        SEZIONE: CONTESTO "Contesto"
+        Fornisce una breve descrizione dell'azienda e del contesto di operatività.
+      -->
+      <section class="card">
+        <h2>Contesto</h2>
+        <p>
+          Azienda agricola radicata nel territorio del Cilento/Paestum, attiva nella produzione vitivinicola e orientata
+          a un modello che integra qualità, tutela ambientale e responsabilità sociale, con pratiche come la conduzione biologica, 
+          la cura del suolo e della biodiversità, l'attenzione all'uso delle risorse (energia e gestione degli scarti) 
+          e la valorizzazione dei sottoprodotti lungo la filiera.
+        </p>
+      </section>
+
+      <!--
+        SEZIONE: INIZIATIVE "Azioni di sostenibilità"
+        Lista puntata con le principali azioni di sostenibilità.
+      -->
+
+  <section class="card" id="azioni">
+  <h2>Azioni di sostenibilità</h2>
+
+  <p>
+    Le azioni descritte nel Bilancio di Sostenibilità 2024 mostrano un approccio integrato: dalla gestione
+    agronomica alla cantina, fino all'organizzazione interna e all'impegno sociale sul territorio.
+  </p>
+
+  <ul class="list">
+    <li>
+      <strong>Agricoltura biologica e biodiversità:</strong>
+      conduzione biologica e pratiche per la tutela del suolo e della biodiversità, come il <strong>sovescio</strong>.
+    </li>
+    <li>
+      <strong>Energia rinnovabile:</strong>
+      presenza di un impianto <strong>fotovoltaico da 96 kW</strong> per ridurre il fabbisogno da rete.
+    </li>
+    <li>
+      <strong>Circolarità:</strong>
+      utilizzo del <strong>biodigestore</strong>, alimentato anche dal letame delle bufale, per recuperare risorse in un'ottica di economia circolare.
+    </li>
+    <li>
+      <strong>Recupero dei sottoprodotti:</strong>
+      vinacce e fecce vengono recuperate e conferite (come sottoprodotto) e, in parte, possono essere destinate anche al biodigestore.
+    </li>
+    <li>
+      <strong>Persone e sicurezza:</strong>
+      formazione e monitoraggio su salute e sicurezza sul lavoro (DPI, movimentazione manuale dei carichi e prevenzione).
+    </li>
+    <li>
+      <strong>Territorio e inclusione:</strong>
+      partecipazione a iniziative sociali e di sensibilizzazione, come il progetto “V'Incantiamo”.
+    </li>
+  </ul>
+  </section>
+
+      <!--
+        SEZIONE: DOWNLOAD "Download report"
+
+        Questo id="download" è il "bersaglio" del link presente nella sezione HEADER 
+      -->
+      <section id="download" class="card download">
+        <div>
+          <h2>Download report (869Kb)</h2>
+          <p class="muted">Bilancio di Sostenibilità 2024 (PDF) — fonte ufficiale.</p>
+        </div>
+
+        <!--
+          Nella parte di destra abbiamo:
+          - Download PDF: apre in nuova scheda il PDF relativo alla sostenibilità
+          - Sito ufficiale: apre in nuova scheda il sito web dell'azienda scelta
+
+          target="_blank": apre in nuova scheda.
+          rel="noopener": viene usato per evitare che la nuova scheda possa "controllare" la pagina padre.
+        -->
+        <div class="download-actions">
+          <a
+            class="button ghost"
+            href="https://www.sansalvatore1988.it/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Sito ufficiale
+          </a>
+
+          <a
+            class="button primary"
+            href="Report/Bilancio-di-sostenibilita.pdf""
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Apri PDF
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+
+  <!-- ==============================
+                  FOOTER
+       ==============================
+       Contiene:
+       - disclaimer didattico
+       - fonti e link al sito
+  -->
+ 
+  <footer class="site-footer">
+    <div class="page-container">
+      <!-- Disclaimer -->
+      <p>
+        <strong>Pagina Web sviluppata esclusivamente per fini didattici.
+                 I contenuti sono una rielaborazione delle informazioni reperite dal sito ufficiale dell'azienda oggetto di studio.
+                 Per informazioni complete e aggiornate si rimanda alle fonti ufficiali.
+        </strong>
+      </p>
+
+      <!-- Fonti -->
+      <p class="muted">
+        Fonte: Bilancio di Sostenibilità 2024; sito ufficiale San Salvatore 1988 —
+        <a href="https://www.sansalvatore1988.it/" target="_blank" rel="noopener noreferrer">www.sansalvatore1988.it</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
