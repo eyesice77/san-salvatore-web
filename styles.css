@@ -15,19 +15,12 @@
   --max-contenuto: 980px;
 }
 
-/* Reset minimale
-Inizio col rendere lo stile della pagina più uniforme tra i possibili browser.
-Con 'box-sizing: border-box' ==> le dimensioni degli elementi restano invariati (padding e bordo sono inclusi nella larghezza/altezza),
-mentre 'margin: 0' e 'padding: 0' su 'html' e 'body' eliminano rispettivamente i marigini esterni e spazi interni*/
+/* Reset minimale */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 
 
-/* Base pagina 
-In questa parte viene impostato lo stile di base per tutta la pagina.
-In font-family è presente un elenco di font per i vari possibili dispositivi: Windows, iOS, Android, Arial e il generico sans-serif
-La distanza tra una riga e l'altra è di 1,55 altezza carattere
-sfondo e testo li ho definiti in root  */
+/* Base pagina */
 body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   line-height: 1.55;
@@ -40,25 +33,16 @@ body{
 a{ color: inherit; }
 
 
-/* Contenitore centrale
-qui definisco la larghezza del contenitore centrandolo allo schermo e mantenendo un margine laterale
-in width viene presa la larghezza dello schermo meno 16px a sinistra e a destra fino ad un massimo di 980 pixel*/
+/* Contenitore centrale */
 .page-container{
   width: min(100% - 32px, var(--max-contenuto));
   margin: 0 auto;
 }
 
 
+/* Header */
 
-/* ==============================
-              Header
-   ==============================   
-*/
-
-
-/*
-   Qui definisco colori, sfondo, posizione e "fisso" l'intestazione in alto
- */
+/* Qui definisco colori, sfondo, posizione e "fisso" l'intestazione in alto */
 
 .site-header{
   position: sticky;
@@ -69,11 +53,7 @@ in width viene presa la larghezza dello schermo meno 16px a sinistra e a destra 
   border-bottom: 1px solid var(--bordo);
 }
 
-/*
-   Uso Flexbox per mettere gli elementi dell'header sulla stessa riga:
-   il blocco "brand" resta a sinistra e il pulsante "Scarica il report" va a destra,
-   entrambi centrati in verticale, con 14px di spazio tra loro e 14px di padding sopra/sotto.
-*/
+/* Flexbox per mettere gli elementi dell'header sulla stessa riga */
 .header-inner{
   display: flex;
   justify-content: space-between;
@@ -105,10 +85,7 @@ in width viene presa la larghezza dello schermo meno 16px a sinistra e a destra 
 }
 
 
-/* ==============================
-            Contenuto
-   ==============================
-*/
+/* Contenuto */
 .main-content{
   padding: 28px 0 44px;
 }
@@ -136,10 +113,7 @@ p{ margin: 0 0 10px; }
 .list li{ margin: 8px 0; }
 
 
-/* ==============================
-           Area download
-   ============================== 
-*/
+/* Area download */
 /* Layout download: testo a sinistra, azioni a destra */
 .download{
   display: flex;
@@ -156,7 +130,7 @@ p{ margin: 0 0 10px; }
   justify-content: flex-end;
 }
 
-/* Pulsante (link) con la proprietà text-decoration elimino la sottolineatura */
+/* Pulsante (link) */
 .button{
   display: inline-flex;
   align-items: center;
@@ -184,11 +158,7 @@ p{ margin: 0 0 10px; }
 .button:hover{ transform: translateY(-1px); }
 
 
-
-/* ==============================
-              Footer
-   ==============================
-*/
+/* Footer */
 .site-footer{
   background: rgba(220, 235, 224, 0.92);
   backdrop-filter: blur(10px);
@@ -198,12 +168,7 @@ p{ margin: 0 0 10px; }
 
 .site-footer p{ margin: 6px 0; }
 
-/* ==============================
-              Mobile
-   ==============================
-*/
-
-/* Sotto 700px imposto il layout in colonna per non "stringere" troppo gli elementi */
+/* Mobile */
 @media (max-width: 700px){
   .header-inner{ flex-direction: column; align-items: flex-start; }
   .download{ flex-direction: column; align-items: stretch; }
